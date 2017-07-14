@@ -1,0 +1,6 @@
+- name: pre_a
+  debug: msg=pre
+
+- name: pre_b
+  shell: "mktemp -d"
+  register: user_temp_home

@@ -1,0 +1,7 @@
+---
+- name: pre_main
+  hosts: all
+  tasks:
+    - name: pants
+      shell: "mktemp -d"
+      register: user_temp_home

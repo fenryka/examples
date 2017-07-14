@@ -1,0 +1,26 @@
+---
+- include: create_tmp.yml
+
+
+- name: First
+  hosts: all
+  environment:
+    - HOME: "{{ user_temp_home.stdout }}"
+  roles :
+    - role_1
+
+
+- name: Second
+  hosts: all
+  environment:
+    HOME: "{{ user_temp_home.stdout }}"
+    #  pre_tasks:
+    #    - include: pre.yml
+  tasks :
+    - name: dbg
+      shell: "echo $HOME"
+      register: home_op_b
+    - name: dbg
+      debug: msg="{{ home_op_b.stdout }}"
+  post_tasks:
+    - include: post.yml

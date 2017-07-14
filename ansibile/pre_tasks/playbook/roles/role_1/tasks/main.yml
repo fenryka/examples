@@ -1,0 +1,6 @@
+- name: first_dbg
+  shell: "echo $HOME"
+  register: home_op_r1
+
+- name: dbg
+  debug: msg="role1 - {{ home_op_r1.stdout }}"

@@ -1,0 +1,8 @@
+---
+- hosts: h1
+  roles:
+    - { role: role_var, var1: 'a' }
+
+- hosts: h1
+  roles:
+    - { role: role_var, var1: 'bad' }

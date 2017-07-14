@@ -1,0 +1,9 @@
+#!/usr/bin/python
+
+test = 'this-is-a-string'
+
+test1 = '%s' % test
+test2 = 'h%s' % test
+
+print test1
+print test2

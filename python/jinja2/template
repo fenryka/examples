@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+</head>
+
+<body>
+
+<div id="c ntent">
+  <p>Why, hello there!</p>
+</div>
+
+{% for item in favorites %}
+  <li>{{ item }}</li>
+{% endfor %}
+
+</body>
+</html>

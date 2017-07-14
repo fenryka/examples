@@ -1,0 +1,6 @@
+[servers]
+jira : jira.splunk.com
+git  : git.splunk.com
+
+[users]
+jira : kbaker

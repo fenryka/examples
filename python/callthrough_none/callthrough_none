@@ -1,0 +1,5 @@
+#!/usr/bin/python
+
+args = None
+
+print args.thing
