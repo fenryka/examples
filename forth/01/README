@@ -1,0 +1,10 @@
+# To Execute
+```gforth test.fs -e bye```
+
+# Dependency
+
+Run using gforth
+
+## MacOS Install
+
+```brew install gforth```
