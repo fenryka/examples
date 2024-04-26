@@ -4,3 +4,4 @@
 *.jar
 
 *.o
+.DS_Store
