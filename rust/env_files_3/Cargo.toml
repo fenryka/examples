@@ -1,0 +1,12 @@
+[package]
+name = "env_files_3"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dotenv = "0.15.0"
+envy = "0.4.2"
+serde = { version = "1.0.198", features = ["derive"] }
+log = "0.4.21"
