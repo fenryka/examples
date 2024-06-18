@@ -1,0 +1,12 @@
+[package]
+name = "dynamo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aws-sdk-dynamodb = "1.32.0"
+aws-config = "1.5.1"
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.38.0", features = ["rt", "rt-multi-thread", "macros"] }
+serde_dynamo = { version = "4", features = ["aws-sdk-dynamodb+1"] }
+serde_json = "1.0.117"
