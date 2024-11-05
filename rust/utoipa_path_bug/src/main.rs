@@ -1,13 +1,13 @@
-use axum::http::StatusCode;
-use axum::{Json, Router};
-use axum::response::IntoResponse;
+use axum::Router;
 use axum::routing::get;
 use utoipa::OpenApi;
-use utoipa_swagger_ui::SwaggerUi;
-use uuid::Uuid;
 
 mod projects {
-    use super::*;
+    use axum::http::StatusCode;
+    use axum::response::IntoResponse;
+    use uuid::Uuid;
+    use axum::Json;
+
     pub(crate) mod v2 {
         use super::*;
 
@@ -64,9 +64,9 @@ async fn main() {
     use projects::v2;
     use projects::v3;
     let test_app = Router::new()
-        .route("/v3/projects", get(v3::get_projects))
+        .route("/v3/projects", axum::routing::get(v3::get_projects))
         .route("/v2/projects", get(v2::get_projects))
-        .merge(SwaggerUi::new("/docs").url("/openapi.json", docs::ApiDoc::openapi()));
+        .merge(utoipa_swagger_ui::SwaggerUi::new("/").url("/openapi.json", docs::ApiDoc::openapi()));
 
     let addr = std::format!("0.0.0.0:{}", 2222);
 
