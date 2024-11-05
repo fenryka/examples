@@ -1,0 +1,12 @@
+[package]
+name = "utoipa_path_bug"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+utoipa = { version = "5.2.0", features = ["axum_extras", "uuid", "url"] }
+utoipa-swagger-ui = { version = "8.0.0", features = ["axum", "vendored"] }
+utoipa-swagger-ui-vendored = "0.1.1"
+axum = { version = "0.7.5", features = ["macros"] }
+uuid = { version = "1.10.0", features = ["serde", "v4"] }
+tokio = { version = "1.41.0", features = ["rt", "rt-multi-thread", "macros"] }
