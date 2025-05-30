@@ -1,0 +1,26 @@
+[package]
+name = "python-interop"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "python_interop"
+# "rlib" is needed for regular Rust builds, "cdylib" for Python extension
+crate-type = ["cdylib", "rlib"]
+
+# Define features for the project
+[features]
+# Extension feature for Python builds
+extension-module = ["pyo3/extension-module"]
+# Default features when no features are specified
+default = []
+
+# Base dependencies with no Python extension features
+[dependencies]
+pyo3 = { version = "0.25.0", default-features = true }
+serde = { version = "1.0.219", features = ["derive"] }
+
+# macOS-specific configuration for Python extension
+[target.'cfg(all(target_os = "macos", feature = "extension-module"))'.dependencies.pyo3]
+version = "0.25.0"
+features = ["extension-module", "abi3-py38"]
